@@ -1,0 +1,12 @@
+# Simple DevOps Project
+
+This is a simple DevOps project consisting of a React front-end and a Node.js back-end API.
+
+## Front-End
+
+The front-end is a simple React app that fetches user data from the back-end API and displays it.
+
+To run the front-end locally:
+1. Navigate to the `frontend` folder:
+   ```bash
+   cd frontend
