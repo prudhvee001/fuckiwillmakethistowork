@@ -32,19 +32,21 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    # Step 5: Build and Push Backend Docker Image
+    # Step 5: Build and Push Frontend Docker Image
+    - name: Build and Push Frontend Docker Image
+      run: |
+        echo "Building frontend Docker image..."
+        docker build -t prudhvee001/studentapp-frontend:${{ github.sha }} -f frontend/Dockerfile .
+        docker push prudhvee001/studentapp-frontend:${{ github.sha }}    
+
+    # Step 6: Build and Push Backend Docker Image
     - name: Build and Push Backend Docker Image
       run: |
         echo "Building backend Docker image..."
         docker build -t prudhvee001/studentapp-backend:${{ github.sha }} -f backend/Dockerfile .
         docker push prudhvee001/studentapp-backend:${{ github.sha }}
 
-    # Step 6: Build and Push Frontend Docker Image
-    - name: Build and Push Frontend Docker Image
-      run: |
-        echo "Building frontend Docker image..."
-        docker build -t prudhvee001/studentapp-frontend:${{ github.sha }} -f frontend/Dockerfile .
-        docker push prudhvee001/studentapp-frontend:${{ github.sha }}
+    
 
     # Step 7: Set up kubectl to interact with the EKS cluster
     - name: Set up kubectl
