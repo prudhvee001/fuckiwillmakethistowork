@@ -10,7 +10,7 @@ COPY package*.json /app/
 # Install any needed dependencies
 RUN npm install
 
-# Copy the rest of the application files into the container
+# Copy the rest of the application files into the containe
 COPY . /app/
 
 # Make the app available on port 5000
