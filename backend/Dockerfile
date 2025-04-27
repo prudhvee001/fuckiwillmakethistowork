@@ -1,4 +1,4 @@
-# Use an official Node runtime as a parent image
+# Use an official Node runtime as a parent imag
 FROM node:16-alpine
 
 # Set the working directory in the container
