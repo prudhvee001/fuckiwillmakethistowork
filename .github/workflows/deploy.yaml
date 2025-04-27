@@ -36,15 +36,15 @@ jobs:
     - name: Build and Push Frontend Docker Image
       run: |
         echo "Building frontend Docker image..."
-        docker build --no-cache -t prudhvee001/studentapp-frontend:${{ github.sha }} -f frontend/Dockerfile .
-        docker push prudhvee001/studentapp-frontend:${{ github.sha }}    
+        docker build --no-cache -t prudhveedocker/studentapp-frontend:${{ github.sha }} -f frontend/Dockerfile .
+        docker push prudhveedocker/studentapp-frontend:${{ github.sha }}    
 
     # Step 6: Build and Push Backend Docker Image
     - name: Build and Push Backend Docker Image
       run: |
         echo "Building backend Docker image..."
-        docker build --no-cache -t prudhvee001/studentapp-backend:${{ github.sha }} -f backend/Dockerfile .
-        docker push prudhvee001/studentapp-backend:${{ github.sha }}
+        docker build --no-cache -t prudhveedocker/studentapp-backend:${{ github.sha }} -f backend/Dockerfile .
+        docker push prudhveedocker/studentapp-backend:${{ github.sha }}
 
     
 
